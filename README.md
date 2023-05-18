@@ -48,5 +48,5 @@ For more information on supported commands and features, please refer to the sou
 
 ## Acknowledgements
 
-* This project is based on the concepts learned in the ALX-Software Engineering Program-> Low-level Programming:prigramming in C as well as the Shell-projects.
+* This project is based on the concepts learned in the ALX-Software Engineering Program - Low-level Programming::programming in C.
 * This project is a group work done jointly by https://github.com/Keny09 and https://github.com/ochiengsulwe
