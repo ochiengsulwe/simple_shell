@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * line_split - splits args into tokaens
- * @line: an array or argsto be parsed
+ * line_split - splits args into tokens
+ * @line: an array or args to be parsed
  * Return: returns a pointer to the array pointers
  */
 char **line_split(char *line)

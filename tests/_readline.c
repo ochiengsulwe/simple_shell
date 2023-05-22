@@ -5,7 +5,7 @@
  */
 char *_read_line(void)
 {
-	size_t buffersize = BUFSIZ;
+	size_t buffer_size = BUFSIZ;
 	int index = 0;
 	char *buffer = NULL;
 	int _char;
@@ -26,13 +26,13 @@ char *_read_line(void)
 		}
 		else
 		{
-			buffe[index] = c;
+			buffer[index] = c;
 		}
 		index++;
-		if (index >= buffersize)
+		if (index >= buffer_size)
 		{
-			buffersize += BUFSIZ;
-			buffer = realloc(buffer, buffersize);
+			buffer_size += BUFSIZ;
+			buffer = realloc(buffer, buffer_size);
 			if (!buffer)
 			{
 				dprintf(STDERR_FILENO, "Error: reallocation error\n");
