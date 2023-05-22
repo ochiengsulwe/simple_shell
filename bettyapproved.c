@@ -1,4 +1,4 @@
-nclude "main.h"
+#include "main.h"
 /**
  * cube_function - shows the cube of a number
  * @num: The number to be cubed
