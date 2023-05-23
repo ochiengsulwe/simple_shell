@@ -7,7 +7,7 @@
   */
 char **split_str(char *line)
 {
-	char *delim = " ";
+	char *delim = " \t\n";
 	char *token = NULL;
 	char **tokens = NULL;
 	int count = 0, buff_size = 32;
