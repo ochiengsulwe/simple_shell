@@ -17,7 +17,7 @@ int main(int argc, char **args, char **envp)
 	while (true)
 	{
 		printf("$ ");
-		line = _readline();
+		line = _read_line();
 		tokens = split_str(line);
 		if (tokens[0] != NULL)
 			_exec(tokens);

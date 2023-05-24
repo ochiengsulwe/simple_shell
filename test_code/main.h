@@ -15,5 +15,6 @@
 char *_readline(void);
 char **split_str(char *line);
 void _exec(char **args);
+char *_read_line(void);
 
 #endif
