@@ -1,25 +1,43 @@
 #include "main.h"
 /**
- * _readline - prints ommands  unto the next line
- * Return: the charactors read on success
- *	-1 on failure
+ * _read_line - reads characters from a file or stdin
+ * Return: returns pointer to the buffer storing the read characters.
  */
-char *_readline(void)
+char *_read_line(void)
 {
-	char *line = NULL;
-	size_t line_len = 0;
+	size_t buffer_size = BUFSIZ;
+	int index = 0;
+	char *buffer = NULL;
+	int _char;
 
-	if (getline(&line, &line_len, stdin) == -1)
+	buffer = malloc(sizeof(char) * buffer_size);
+	if (buffer == NULL)
 	{
-		if (feof(stdin))
+		dprintf(STDERR_FILENO, "Error: Can't allocate memory\n");
+		exit(EXIT_FAILURE);
+	}
+	while (true)
+	{
+		c = getchar();
+		if (c == EOF || c == '\n')
 		{
-			exit(EXIT_SUCCESS);
+			buffer[index] = '\0';
+			return (buffer);
 		}
 		else
 		{
-			dprintf(STDERR_FILENO, "Error: Couldn't read line: %s\n", line);
-			exit(EXIT_FAILURE);
+			buffer[index] = c;
+		}
+		index++;
+		if (index >= buffer_size)
+		{
+			buffer_size += BUFSIZ;
+			buffer = realloc(buffer, buffer_size);
+			if (!buffer)
+			{
+				dprintf(STDERR_FILENO, "Error: reallocation error\n");
+				exit(EXIT_FAILURE);
+			}
 		}
 	}
-	return (line);
 }
