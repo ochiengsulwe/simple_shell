@@ -10,10 +10,7 @@
 #include <readline/readline.h>
 #include <readline/history.h>
 #include <stdbool.h>
-
-#define MAXCOM 1000 /* max number of letters to be supported */
-#define MAXLIST 100 /* max number of commands to be suported */
-#define clear() printf("\033[H\033[J") /* clearing shell during startup*/
+#include <errno.h>
 
 char *_readline(void);
 char **split_str(char *line);
