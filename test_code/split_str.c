@@ -32,8 +32,8 @@ char **split_str(char *line)
 				dprintf(STDERR_FILENO, "Error: Can't reallocate memory");
 				exit(EXIT_FAILURE);
 			}
-		token = strtok(NULL, delim);
 		}
+		token = strtok(NULL, delim);
 	}
 	tokens[count] = NULL;
 	return (tokens);

@@ -8,16 +8,12 @@
  */
 void _exec(char **args)
 {
-	pid_t child;
+	pid_t child, ppid;
 	int status;
 	char **envp = NULL;
 
-	if (child < 0)
-	{
-		dprintf(STDERR_FILENO, "An error has occurred");
-		/*exit(EXIT_FAILURE);*/
-	}
-	else if (child == 0)
+	child = fork();
+	if (!child)
 	{
 		if (execve(args[0], args, NULL) == -1)
 		{
@@ -28,7 +24,7 @@ void _exec(char **args)
 	else
 	{
 		do {
-			waitpid(child, &status, WUNTRACED);
+			ppid = waitpid(child, &status, WUNTRACED);
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
 }
