@@ -9,10 +9,12 @@ int main(int argc __attribute__((unused)), char **args __attribute__((unused)))
 {
 	char **tokens = NULL;
 	char *line = NULL;
+	char *prompt = "$ \0";
 
 	while (true)
 	{
-		printf("$ ");
+		if (isatty(STDIN_FILENO) == 1)
+			write(STDOUT_FILENO, prompt, strlen(prompt));
 		line = _readline();
 		if (line == NULL)
 		{
