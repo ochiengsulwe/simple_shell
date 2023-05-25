@@ -12,12 +12,10 @@ int main(int argc, char **args, char **envp)
 	char **tokens = NULL;
 	char *line = NULL;
 
-	if (argc < 1)
-		printf("$ \n");
 	while (true)
 	{
 		printf("$ ");
-		line = _read_line();
+		line = _readline();
 		tokens = split_str(line);
 		if (tokens[0] != NULL)
 			_exec(tokens);
