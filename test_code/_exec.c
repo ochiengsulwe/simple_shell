@@ -8,23 +8,32 @@
  */
 void _exec(char **args)
 {
-	pid_t child, ppid;
+	pid_t child;
 	int status;
 	char **envp = NULL;
 
 	child = fork();
-	if (!child)
+	if (child == -1)
 	{
-		if (execve(args[0], args, NULL) == -1)
+		perror("fork");
+		exit(EXIT_FAILURE);
+	}
+	if (child == 0)
+	{
+		if (execve(args[0], args, envp) == -1)
 		{
 			perror("hsh");
-			/*exit(EXIT_FAILURE);*/
+			exit(EXIT_FAILURE);
 		}
 	}
 	else
 	{
 		do {
-			ppid = waitpid(child, &status, WUNTRACED);
+			if (waitpid(child, &status, WUNTRACED) == -1)
+			{
+				perror("waitpid");
+				exit(EXIT_FAILURE);
+			}
 		} while (!WIFEXITED(status) && !WIFSIGNALED(status));
 	}
 }
