@@ -20,5 +20,6 @@ void _cd(char **args)
  */
 void hsh_exit(char **args)
 {
+	(void)args;
 	exit(0);
 }

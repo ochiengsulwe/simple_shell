@@ -23,6 +23,7 @@ int hsh_cd(char **args)
 int hsh_help(char **args)
 {
 	int i;
+	(void)args;
 
 	printf("Kendy & Sulwe's HSH\n");
 	printf("Type programme names and arguments, and press enter.\n");
@@ -37,5 +38,6 @@ int hsh_help(char **args)
 }
 int hsh_exit(char **args)
 {
-	return (0)
+	(void)args;
+	return (0);
 }

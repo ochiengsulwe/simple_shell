@@ -5,7 +5,7 @@
  */
 char *_read_line(void)
 {
-	size_t buffer_size = BUFSIZ;
+	int buffer_size = BUFSIZ;
 	int index = 0;
 	char *buffer = NULL;
 	int c;

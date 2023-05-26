@@ -11,6 +11,8 @@ int main(int argc, char **args, char **envp)
 {
 	char **tokens = NULL;
 	char *line = NULL;
+	(void)args;
+	(void)envp;
 
 	if (argc < 1)
 		printf("$ \n");

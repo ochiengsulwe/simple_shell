@@ -8,6 +8,7 @@ int _init(char **args)
 {
 	pid_t pid, wpid;
 	int status;
+	(void)wpid;
 
 	pid = fork();
 	if (pid == 0)
@@ -18,13 +19,10 @@ int _init(char **args)
 		}
 		exit(EXIT_FAILURE);
 	}
-	else if
-	{
-		if (pid < 0)
+	else if (pid < 0)
 		{
 			perror("hsh");
 		}
-	}
 	else
 	{
 		do {
