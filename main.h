@@ -11,7 +11,7 @@
 #include <readline/history.h>
 
 #define MAXCOM 1000 /* max number of letters to be supported */
-#define MAXLIST 100 /* max number of commands to be suported */
+#define MAXLIST 1000 /* max number of commands to be suported */
 #define clear() printf("\033[H\033[J") /* clearing shell during startup*/
 
 #endif

@@ -11,7 +11,7 @@ void hsh_loop(void)
 		printf("$ ");
 		line = _read_line();
 		args = line_split(line);
-		status = hsh_execute(args);
+		status = hsh_exit(args);
 
 		free(line);
 		free(args);

@@ -5,10 +5,10 @@
  */
 char *_read_line(void)
 {
-	size_t buffer_size = BUFSIZ;
+	int buffer_size = BUFSIZ;
 	int index = 0;
 	char *buffer = NULL;
-	int _char;
+	char c;
 
 	buffer = malloc(sizeof(char) * buffer_size);
 	if (buffer == NULL)
@@ -16,7 +16,7 @@ char *_read_line(void)
 		dprintf(STDERR_FILENO, "Error: Can't allocate memory\n");
 		exit(EXIT_FAILURE);
 	}
-	while (true)
+	while (1)
 	{
 		c = getchar();
 		if (c == EOF || c == '\n')

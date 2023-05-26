@@ -5,6 +5,7 @@
 int hsh_cd(char **args);
 int hsh_help(char **args);
 int hsh_exit(char **args);
+void hsh_loop();
 
 char *builtin_str[] = { "cd", "help", "exit"};
 int (*builtin_func[])(char **) = {&hsh_cd, &hsh_help, &hsh_exit};

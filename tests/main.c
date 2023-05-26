@@ -19,6 +19,7 @@ int main(int argc __attribute__((unused)), char **av)
 	* read_line();
 	* free(av);
 	*/
+	(void)av;
 	hsh_loop();
 	return (0);
 }

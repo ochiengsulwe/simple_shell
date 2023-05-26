@@ -10,6 +10,7 @@ void read_line(void)
 	size_t *len = 0;
 	ssize_t read;
 
+	(void)len;
 	printf("$ ");
 	read = getline(char **line, len, stdin);
 	if (read == -1)
