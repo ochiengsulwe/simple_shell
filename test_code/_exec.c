@@ -60,4 +60,4 @@ int num_builtins(void)
 
 	num = sizeof(ins) / sizeof(struct builtin);
 	return (num);
-};
+}

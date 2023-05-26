@@ -1,5 +1,4 @@
 #!/bin/bash
-clear
 echo "Enter file to push"
 read FILE
 echo "Enter commit message"
