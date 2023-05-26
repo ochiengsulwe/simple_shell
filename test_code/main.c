@@ -20,7 +20,7 @@ int main(int argc __attribute__((unused)), char **args __attribute__((unused)))
 		{
 			free(line);
 			free(tokens);
-			exit(EXIT_SUCCESS);
+			exit(EXIT_FAILURE);
 		}
 		tokens = split_str(line);
 		if (tokens[0] != NULL)

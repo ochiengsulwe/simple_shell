@@ -19,11 +19,13 @@ void _exec(char **args)
 	}
 	if (child == 0)
 	{
-		if (args[1] != NULL)
-		{
-			dprintf(STDERR_FILENO, "./shell: No such file or directory\n");
-			exit(EXIT_FAILURE);
-		}
+		/**
+		 *if (args[1] != NULL)
+		 *{
+		 *	dprintf(STDERR_FILENO, "./shell: No such file or directory\n");
+		 *	exit(EXIT_FAILURE);
+		 *}
+		 */
 		if (execve(args[0], args, envp) == -1)
 		{
 			perror("./shell");
