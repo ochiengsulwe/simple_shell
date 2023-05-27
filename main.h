@@ -17,4 +17,5 @@ char **split_str(char *line);
 void _exec(char **args);
 char *_read_line(void);
 
+extern **environ;
 #endif
